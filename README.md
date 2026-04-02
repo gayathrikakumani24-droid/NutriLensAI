@@ -85,15 +85,15 @@ pip install -r requirements.txt
 >
 > Both are cached locally after the first download.
 
-### 4. Set up your Gemini API key
+### 4. Set up your Groq API key
 
 Create a `.env` file in the project root:
 
 ```
-GEMINI_API_KEY=your_gemini_api_key_here
+GROQ_API_KEY=your_gemini_api_key_here
 ```
 
-Get a free API key at [aistudio.google.com](https://aistudio.google.com/app/apikey).
+
 
 ### 5. Build the RAG database (first time only)
 
@@ -106,6 +106,7 @@ python build_rag_db.py
 ### 6. Run the app
 
 ```bash
+python build_rag_db.py (this automatically creates fndds_doocs.pkl,fndds_rag.faiss files)
 streamlit run app.py
 ```
 
@@ -176,8 +177,8 @@ The BLIP large model (~900MB) downloads from HuggingFace on first use and is cac
 **`RAG index not found` error**
 Run `python build_rag_db.py` to regenerate `fndds_rag.faiss` and `fndds_docs.pkl`.
 
-**Gemini API error**
-Make sure your `.env` has no quotes: `GEMINI_API_KEY=your_key` not `GEMINI_API_KEY="your_key"`.
+**Groq API error**
+Make sure your `.env` has no quotes: `GROQ_API_KEY=your_key` not `GROQ_API_KEY="your_key"`.
 
 **`diet.db` not found**
 The SQLite database is created automatically on first run — no action needed.
