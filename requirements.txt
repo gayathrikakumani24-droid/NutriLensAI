@@ -1,22 +1,33 @@
 # ── Web UI ────────────────────────────────────────────────────────────────────
 streamlit>=1.35.0
 
-# ── Vision model (BLIP) ───────────────────────────────────────────────────────
+# ── API layer ─────────────────────────────────────────────────────────────────
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9       # FastAPI file uploads
+httpx>=0.27.0                  # Streamlit → FastAPI HTTP client
+
+# ── Vision model (BLIP + CLIP) ───────────────────────────────────────────────
 transformers>=4.40.0
 torch>=2.2.0
 Pillow>=10.0.0
+
+# ── Depth + segmentation ─────────────────────────────────────────────────────
+opencv-python-headless>=4.9.0
+rembg>=2.0.56
 
 # ── Embeddings + Vector search ────────────────────────────────────────────────
 sentence-transformers>=2.7.0
 faiss-cpu>=1.8.0
 numpy>=1.26.0
 
-# ── AI recommendations ────────────────────────────────────────────────────────
-google-genai>=0.8.0
+# ── AI recommendations (Groq) ─────────────────────────────────────────────────
+groq>=0.9.0
 
 # ── Data handling ─────────────────────────────────────────────────────────────
 pandas>=2.2.0
 openpyxl>=3.1.0
+plotly>=5.22.0
 
 # ── Database ──────────────────────────────────────────────────────────────────
 sqlalchemy>=2.0.0
